@@ -26,21 +26,21 @@
                                     <constraint firstAttribute="width" constant="100" id="scp-BA-4qu"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Hourly Wage" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uQn-wk-HOf" customClass="CurrencyTextField" customModule="CustomTextFields" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Hourly Wage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uQn-wk-HOf" customClass="CurrencyTextField" customModule="CustomTextFields" customModuleProvider="target">
                                 <rect key="frame" x="25" y="229" width="343" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="sPa-zL-BLx"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Item Price" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lkh-gS-B2j" customClass="CurrencyTextField" customModule="CustomTextFields" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Item Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lkh-gS-B2j" customClass="CurrencyTextField" customModule="CustomTextFields" customModuleProvider="target">
                                 <rect key="frame" x="25" y="318" width="343" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="hUN-hp-oOm"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -60,6 +60,10 @@
                             <constraint firstItem="I8j-ZN-gfn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zmV-w3-cvf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="hourlyWageTF" destination="uQn-wk-HOf" id="oNC-wY-paa"/>
+                        <outlet property="itemPriceTF" destination="lkh-gS-B2j" id="VFf-cy-tb7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
