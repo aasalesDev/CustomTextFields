@@ -1,24 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="CustomTextFields" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="windowShopperBG" translatesAutoresizingMaskIntoConstraints="NO" id="I8j-ZN-gfn">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="858"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="windowShopperIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Veu-SJ-831">
+                                <rect key="frame" x="146.66666666666666" y="94" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="DHE-2h-dRq"/>
+                                    <constraint firstAttribute="width" constant="100" id="scp-BA-4qu"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Hourly Wage" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uQn-wk-HOf" customClass="CurrencyTextField" customModule="CustomTextFields" customModuleProvider="target">
+                                <rect key="frame" x="25" y="229" width="343" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="sPa-zL-BLx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Item Price" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lkh-gS-B2j" customClass="CurrencyTextField" customModule="CustomTextFields" customModuleProvider="target">
+                                <rect key="frame" x="25" y="318" width="343" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="hUN-hp-oOm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="I8j-ZN-gfn" secondAttribute="bottom" constant="-40" id="11d-gN-QiR"/>
+                            <constraint firstItem="Veu-SJ-831" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="2ou-P1-fRs"/>
+                            <constraint firstItem="lkh-gS-B2j" firstAttribute="leading" secondItem="uQn-wk-HOf" secondAttribute="leading" id="7FE-g5-qp9"/>
+                            <constraint firstItem="lkh-gS-B2j" firstAttribute="trailing" secondItem="uQn-wk-HOf" secondAttribute="trailing" id="9QD-iy-I25"/>
+                            <constraint firstItem="uQn-wk-HOf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="C7p-TO-4f6"/>
+                            <constraint firstItem="lkh-gS-B2j" firstAttribute="top" secondItem="uQn-wk-HOf" secondAttribute="bottom" constant="37" id="DZ4-hY-gdD"/>
+                            <constraint firstItem="Veu-SJ-831" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Iwo-da-Y2E"/>
+                            <constraint firstItem="uQn-wk-HOf" firstAttribute="top" secondItem="Veu-SJ-831" secondAttribute="bottom" constant="35" id="QHt-wN-xbo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uQn-wk-HOf" secondAttribute="trailing" constant="25" id="bP7-2Q-dzr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="I8j-ZN-gfn" secondAttribute="trailing" id="wye-nq-4lu"/>
+                            <constraint firstItem="I8j-ZN-gfn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-59" id="yBf-AW-kV3"/>
+                            <constraint firstItem="I8j-ZN-gfn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zmV-w3-cvf"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="lkh-gS-B2j">
+            <size key="intrinsicContentSize" width="93" height="34"/>
+        </designable>
+        <designable name="uQn-wk-HOf">
+            <size key="intrinsicContentSize" width="111" height="34"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="windowShopperBG" width="414" height="736"/>
+        <image name="windowShopperIcon" width="115" height="115"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
