@@ -15,6 +15,7 @@ import UIKit
 @IBDesignable
 class CurrencyTextField: UITextField {
     
+    /// This function draws and adds a currency symbol to the label
     override func draw(_ rect: CGRect) {
         
         let size: CGFloat = 40
@@ -34,16 +35,19 @@ class CurrencyTextField: UITextField {
         addSubview(currencyLabel)
     }
     
+    /// This funcition will prepare and enable the interface builder to show modifications made in code
     override func prepareForInterfaceBuilder() {
         customizeView()
     }
 
+    /// This is the "view did load" method of the textfield
     override func awakeFromNib() {
         super.awakeFromNib()
         
         customizeView()
     }
     
+    /// This is a method to do some customization to the view/textfield
     private func customizeView() {
         backgroundColor = UIColor.systemGray4
         layer.cornerRadius = 5
