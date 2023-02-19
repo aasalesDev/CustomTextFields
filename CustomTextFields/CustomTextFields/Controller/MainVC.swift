@@ -11,11 +11,22 @@ class MainVC: UIViewController {
     
     @IBOutlet weak var hourlyWageTF: CurrencyTextField!
     @IBOutlet weak var itemPriceTF: CurrencyTextField!
+    @IBOutlet weak var clearCalculatorButton: UIButton!
+    @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var hoursLabel: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         createUIButtonAndAddToKeyboard()
+        configureButton()
+        hideKeyboardWhenTappedAround()
+        resultLabel.isHidden = true
+        hoursLabel.isHidden = true
+    }
+    
+    private func configureButton() {
+        clearCalculatorButton.layer.cornerRadius = 10
     }
     
     private func createUIButtonAndAddToKeyboard() {
@@ -44,9 +55,32 @@ class MainVC: UIViewController {
     }
     
     @objc private func calculate() {
-        print("Ho ho ho")
+        if let hoursTxt = hourlyWageTF.text, let priceTxt = itemPriceTF.text {
+            if let hours = Double(hoursTxt), let price = Double(priceTxt) {
+                resultLabel.text = "\(Wage.getHours(for: Double(hours) , and: Double(price)))"
+                resultLabel.isHidden = false
+                hoursLabel.isHidden = false
+                view.endEditing(true)
+            }
+        }
+        
     }
     
+    private func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    @IBAction func clearCalculatorPressed(_ sender: UIButton) {
+        hourlyWageTF.text = ""
+        itemPriceTF.text = ""
+        resultLabel.isHidden = true
+        hoursLabel.isHidden = true
+    }
     
 }
-
